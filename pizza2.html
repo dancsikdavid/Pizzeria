@@ -1,0 +1,151 @@
+<html>
+
+<head>
+    <title>PIZZA RENDELÉS</title>
+    <script src="pizza2.js"></script>
+    <link rel="stylesheet" href="pizza2.css">
+</head>
+
+<body>
+    <center>
+        <h1>PIZZA RENDELÉS
+            <hr>
+        </h1>
+    </center>
+  
+    <form name="orderForm">
+        <center>
+            <table border="1px solid black">
+                <tr>
+                    <td>
+                        <div class= "left-column column">
+                            <h3>Információk
+                                <hr>
+                            </h3>
+                          <div class="orderform__fields">
+                              <div class="orderform__fields__label">
+                                <label for="name_label">
+                                    <strong>Név:</strong>
+                                </label>
+                              </div>
+                            <div class="orderform__fields__input">
+                                <input type="text" name="name_text" size="30">
+                            </div>
+                          </div>
+                        
+                          <div class="orderform__fields">
+                              <div class="orderform__fields__label__city">
+                                <label for="name_label">
+                                    <strong>Város:</strong>
+                                </label>
+                              </div>
+                            <div class="orderform__fields__input">
+                                <input type="text" name="name_text" size="30">
+                            </div>
+                          </div>
+
+                          <div class="orderform__fields">
+                            <div class="orderform__fields__label">
+                              <label for="address_label">
+                                  <strong>Cím:</strong>
+                              </label>
+                            </div>
+                          <div class="orderform__fields__input">
+                              <textarea name="address_text" cols="25" rows="2"></textarea>
+                          </div>
+                        </div>
+
+                            <br/>
+                              <div class="orderform__fields">
+                              <div class="orderform__fields__label__number">
+                                <label for="name_label">
+                                    <strong>Tel.:</strong>
+                                </label>
+                              </div>
+                            <div class="orderform__fields__input">
+                                <input type="text" name="name_text" size="30">
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                        <div class="column">
+                            <h3>Válassz méretet!
+                                <hr>
+                            </h3>
+
+                            <input type="radio" name="size_select" value="kicsi">
+                            <strong> Kicsi (26 cm)</strong>
+                            <br/>
+                            <input type="radio" name="size_select" value="kozepes">
+                            <strong> Közepes (32 cm)</strong>
+                            <br/>
+                            <input type="radio" name="size_select" value="nagy">
+                            <strong> Nagy (38 cm)</strong>
+                            <br/>
+                            <input type="radio" name="size_select" value="csaladi">
+                            <strong> Családi (46 cm)</strong>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="column">
+                            <h3>Válassz feltétet!
+                                <hr>
+                            </h3>
+                            <input type="checkbox" name="chk_szalami" value="Szalami">
+                            <strong> Szalámi</strong>
+                            <br/>
+                            <input type="checkbox" name="chk_kolbasz" value="Kolbasz">
+                            <strong> Kolbász</strong>
+                            <br/>
+                            <input type="checkbox" name="chk_sonka" value="Sonka">
+                            <strong> Sonka</strong>
+                            <br/>
+                            <input type="checkbox" name="chk_hagyma" value="Hagyma">
+                            <strong> Hagyma</strong>
+                            <br/>
+                            <input type="checkbox" name="chk_gomba" value="Gomba">
+                            <strong> Gomba</strong>
+                            <br/>
+                            <input type="checkbox" name="chk_kukorica" value="Kukorica">
+                            <strong> Kukorica</strong>
+                            <br/>
+                            <input type="checkbox" name="chk_sajt" value="Sajt">
+                            <strong> Sajt</strong>
+                            <br/>
+                            <input type="checkbox" name="chk_pepperoni" value="Pepperoni">
+                            <strong> Pepperoni</strong>
+                            <br/>
+                            <input type="checkbox" name="chk_paradicsom" value="Paradicsom">
+                            <strong> Paradicsom</strong>
+                            <br/>
+                            <input type="checkbox" name="chk_tenger_gyumolcse" value="Tenger gyumolcse">
+                            <strong> Tenger gyümölcse</strong>
+                            <br/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        <input id= "submit" type="button" value="Rendelés leadása" class="button" onClick=pizzaOrderSubmit(document)>
+        <input id="clear" type="reset" value="Törlés" class="button" pizzaOrderSubmit(document)>
+    </form>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <form name="orderConfirm">
+        <center>
+            <h4>Rendelés megerősítése</h4>
+            <id="area1" cols="25" rows="10" name=order_text></textarea>
+        </center>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+
+</body>
+
+</html>
