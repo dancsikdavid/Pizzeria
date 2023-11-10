@@ -54,12 +54,24 @@ function pizzaOrderSubmit(document){
 
 }
 
-function goHome(){
-	window.location.href="http://sabre.southhills.edu/~ntorretti";
-}
 
 function addNums(form2){
 	var num1=eval(form2.txtFirstNum.value);
 	var num2=eval(form2.txtSecNum.value);
 	alert(num1+num2);
 }
+
+  function showSelectedOptions() {
+	const sizeSelect = document.querySelector('input[name="size_select"]:checked');
+	const toppings = document.querySelectorAll('input[name^="chk_"]:checked');
+	let selectedToppings = [];
+	toppings.forEach(topping => selectedToppings.push(topping.value));
+	const selectedOptions = {
+	  size: sizeSelect ? sizeSelect.value : null,
+	  toppings: selectedToppings
+	};
+	const selectedOptionsDiv = document.getElementById("selectedOptions");
+	selectedOptionsDiv.innerHTML += "<h3>Selected Options:</h3><p>Size: " + selectedOptions.size + "</p><ul>";
+	selectedOptions.toppings.forEach(topping => selectedOptionsDiv.innerHTML += "<li>" + topping + "</li>");
+	selectedOptionsDiv.innerHTML += "</ul><hr>";
+  }
