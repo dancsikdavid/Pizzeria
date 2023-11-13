@@ -1,113 +1,139 @@
 body {
-    font-family:'Courier New', Courier, monospace;
-    font-size: 30px;
-    background-color: #201d1d;
-    color:  white;
-  }
+  font-family:'Courier New', Courier, monospace;
+  font-size: 30px;
+  background-image: url(Pizza-Widescreen-Wallpapers-61707.jpg);
+  color:  white;
+}
+
+
 
 .button{
-    font-family:'Courier New', Courier, monospace;
-    font-weight: bold;
-    cursor: pointer;
+  font-family:'Courier New', Courier, monospace;
+  font-weight: bold;
+  cursor: pointer;
 }
-  
-  .column {
-    width: 500px;
-    height: 500px;
-    padding: 20px;
+
+.column {
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+}
+
+#area1 {
+  width: 1500px;
+  font-size: 30px;
+  color: blue;
+}
+
+#submit {
+  margin-top:30px; 
+  height: 50px;
+  width: 500px;
+  font-size: 30px;
+  background-color: lightgrey;
+}
+
+input {
+   margin:0 20px 20px 20px 0;
+   height: 22px;
+}
+
+#clear {
+  margin-top:30px; 
+  height: 50px;
+  width: 500px;
+  font-size: 30px;
+  background-color: lightgrey;
+}
+table{
+  background-color: #a3a3a38c;
+}
+
+
+.orderform__fields {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.orderform__fields__label {
+  width: 200px;
+  float: left;
+  font-size: 30px;
+}
+
+.orderform__fields__input {
+  width: 300px;
+  float: left;
+  font-size: 30px;
+}
+
+.orderform__fields__input input,
+.orderform__fields__input textarea,
+.orderform__fields__input__city
+.orderform__fields__input__number
+{
+  width: 100%;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.orderform__fields__label{
+  width: 300px;
+  float: left;
+  font-size: 30px;
+}
+
+h1{
+  font-size: 80px;
+  color: rgb(0, 0, 0);
+  margin: 15px;
+}
+
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #cc0202, 0 0 40px #cc0202, 0 0 50px #cc0202, 0 0 60px #cc0202, 0 0 70px #cc0202;
   }
-  
-  #area1 {
-    width: 1500px;
-    font-size: 30px;
-    color: blue;
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #e72727, 0 0 40px #e72727, 0 0 50px #e72727, 0 0 60px #e72727, 0 0 70px #e72727, 0 0 80px #e72727;
   }
-  
-  #submit {
-    margin-top:30px; 
-    height: 50px;
-    width: 500px;
-    font-size: 30px;
-    background-color: lightgrey;
-  }
-  
-  input {
-     margin:0 20px 20px 20px 0;
-     height: 22px;
-  }
-  
-  #clear {
-    margin-top:30px; 
-    height: 50px;
-    width: 500px;
-    font-size: 30px;
-    background-color: lightgrey;
-  }
-  
-  
-  .orderform__fields {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .orderform__fields__label {
-    width: 200px;
-    float: left;
-    font-size: 30px;
-  }
-  
-  .orderform__fields__input {
-    width: 300px;
-    float: left;
-    font-size: 30px;
-  }
-  
-  .orderform__fields__input input,
-  .orderform__fields__input textarea,
-  .orderform__fields__input__city
-  .orderform__fields__input__number
-  {
-    width: 100%;
-    font-family:'Courier New', Courier, monospace;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .orderform__fields__label{
-    width: 300px;
-    float: left;
-    font-size: 30px;
-  }
-  
-  h1{
-    font-size: 80px;
-    color: yellow;
-  }
-  
-  h4 {
-    font-size: 30px;
-    color: rgb(255, 255, 255);
-    text-decoration: underline;
-  }
+}
+
+
+h4 {
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+}
 
 h3{
-    font-family:'Courier New', Courier, monospace;
-    font-size: 30px;
-    padding-top: none;
-    margin-top: 0px;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 30px;
+  padding-top: none;
+  margin-top: 0px;
+  color: rgb(255, 51, 0);
 }
-  
-  img {
-    height: 150px;
-    width: 200px;
-  }
+
+img {
+  height: 150px;
+  width: 200px;
+}
 
 strong{
-    font-family:'Courier New', Courier, monospace;
-    font-size: 20px;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 20px;
 }
 
 #getText{
-  color: white;
+color: white;
 }
