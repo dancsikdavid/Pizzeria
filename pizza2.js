@@ -27,7 +27,7 @@ function pizzaOrderSubmit(document){
 		toppings+=", ";
 	}
 	if(orderForm.chk_onions.checked==true){
-		toppings+=orderForm.chk_onions.value;
+		toppings+=orderForm.chk_onions	.value;
 		toppings+=", ";
 	}
 	if(orderForm.chk_mushrooms.checked==true){
