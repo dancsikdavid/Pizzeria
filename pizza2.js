@@ -75,3 +75,42 @@ function addNums(form2){
 	selectedOptions.toppings.forEach(topping => selectedOptionsDiv.innerHTML += "<li>" + topping + "</li>");
 	selectedOptionsDiv.innerHTML += "</ul><hr>";
   }
+
+  function saveOrderToJson() {
+	const sizeSelect = document.querySelector('input[name="size_select"]:checked');
+	const toppings = document.querySelectorAll('input[name^="chk_"]:checked');
+	const name = orderForm.name_text.value;
+	const address = orderForm.address_text.value;
+	const city = orderForm.city_text.value;
+	const phone_num = orderForm.tel_text.value;
+  
+	if (!sizeSelect || toppings.length === 0) {
+	  alert("Kérjük, válasszon méretet és legalább egy feltétet a rendeléshez!");
+	  return;
+	}
+  
+	let selectedToppings = [];
+	toppings.forEach(topping => selectedToppings.push(topping.value));
+  
+	const orderData = {
+	  Név: name,
+	  Cím: address,
+	  Város: city,
+	  Telefonszám: phone_num,
+	  Méret: sizeSelect.value,
+	  Feltétek: selectedToppings
+	};
+  
+	const jsonData = JSON.stringify(orderData, null, 2);
+	const blob = new Blob([jsonData], { type: 'application/json' });
+	const url = URL.createObjectURL(blob);
+  
+	const a = document.createElement('a');
+	a.href = url;
+	a.download = 'order.json';
+	document.body.appendChild(a);
+	a.click();
+	document.body.removeChild(a);
+	URL.revokeObjectURL(url);
+  }
+  

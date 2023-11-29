@@ -40,7 +40,7 @@
                         </label>
                       </div>
                       <div class="orderform__fields__input">
-                        <input type="text" name="name_text" size="30">
+                        <input type="text" name="city_text" size="30">
                       </div>
                     </div>
       
@@ -63,7 +63,7 @@
                         </label>
                       </div>
                       <div class="orderform__fields__input">
-                        <input type="text" name="name_text" size="30">
+                        <input type="text" name="tel_text" size="30">
                       </div>
                     </div>
                   </div>
@@ -136,8 +136,12 @@
               </tr>
             </table>
             <div class="gmob">
-            <button id="submit" type="reset" value="Rendelés összegzése" class="button" onClick="showSelectedOptions();" >Rendelés összegzése</button>
             <button id="clear" type="reset" value="Törlés" class="button" >Rendelés törlése</button>
+            <center>
+              <button type="button" value="Rendelés leadása" class="button" onClick="saveOrderToJson();">Rendelés leadása</button>
+            </center>
+
+
             </div>
           </center>
           <div id="selectedOptions"></div>
