@@ -1,36 +1,41 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="hu-HU">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rendelések</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rendelés Admin</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Rendelések</h1>
 
-        <!-- Display area for JSON data -->
-        <pre id="jsonDataDisplay"></pre>
-    </div>
+  <h1>Rendelés Admin</h1>
 
-    <script>
-        // Fetch JSON data from a specific file
-        fetch('customer_orders.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(jsonData => {
-                // Display JSON data on the page
-                document.getElementById('jsonDataDisplay').textContent = JSON.stringify(jsonData, null, 2);
-            })
-            .catch(error => {
-                console.error('Error fetching JSON:', error);
-                // Handle the error appropriately (e.g., display an error message on the page)
-            });
-    </script>
+  <div id="orderContent">
+    <!-- Adatok -->
+  </div>
+
+  <script>
+    // JSON
+    fetch('order.json')    
+      .then(response => response.json())
+      .then(data => {
+        // JSON kiíratása
+        const orderContentDiv = document.getElementById('orderContent');
+        orderContentDiv.innerHTML = `
+          <p><strong>Név:</strong> ${data.Név}</p>
+          <p><strong>Cím:</strong> ${data.Cím}</p>
+          <p><strong>Város:</strong> ${data.Város}</p>
+          <p><strong>Telefonszám:</strong> ${data.Telefonszám}</p>
+          <p><strong>Méret:</strong> ${data.Méret}</p>
+          <p><strong>Feltétek:</strong> ${data.Feltétek.join(', ')}</p>
+        `;
+      })
+      .catch(error => {
+        console.error('Error fetching JSON:', error);
+        // Hiba line
+        const orderContentDiv = document.getElementById('orderContent');
+        orderContentDiv.innerHTML = '<p>Hiba az adatok leolvasása közben!</p>';
+      });
+  </script>
+
 </body>
 </html>
