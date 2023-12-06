@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="megjel.css">
   <title>Rendelés Admin</title>
 </head>
 <body>
-
-  <h1>Rendelés Admin</h1>
+<center>
+  <h1>LEADOTT RENDELÉS</h1>
 
   <div id="orderContent">
     <!-- Adatok -->
@@ -20,15 +21,25 @@
       .then(data => {
         // JSON kiíratása
         const orderContentDiv = document.getElementById('orderContent');
-        orderContentDiv.innerHTML = `
-          <p><strong>Név:</strong> ${data.Név}</p>
-          <p><strong>Cím:</strong> ${data.Cím}</p>
-          <p><strong>Város:</strong> ${data.Város}</p>
-          <p><strong>Telefonszám:</strong> ${data.Telefonszám}</p>
-          <p><strong>Méret:</strong> ${data.Méret}</p>
-          <p><strong>Feltétek:</strong> ${data.Feltétek.join(', ')}</p>
+        orderContentDiv.innerHTML = `  <div class="blur">
+          <p><strong>Név:</strong></p> <p>${data.Név}</p>
+          <p>--------------------------------------------------</p>
+          <p><strong>Város:</strong></p> <p>${data.Város}</p>
+          <p>--------------------------------------------------</p>
+          <p><strong>Cím:</strong></p> <p>${data.Cím}</p>
+          <p>--------------------------------------------------</p>
+          <p><strong>Telefonszám:</strong></p> <p>${data.Telefonszám}</p>
+          <p>--------------------------------------------------</p>
+          <p><strong>Feltétek:</strong></p> <p>${data.Feltétek.join(', ')}</p>
+          <p>--------------------------------------------------</p>
+          <p><strong>Méret:</strong></p> <p>${data.Méret}</p>        
+        </div>
         `;
+
       })
+
+
+      
       .catch(error => {
         console.error('Error fetching JSON:', error);
         // Hiba line
@@ -36,6 +47,24 @@
         orderContentDiv.innerHTML = '<p>Hiba az adatok leolvasása közben!</p>';
       });
   </script>
+</center>
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+</div>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
+<footer>
+
+  <p>© RózsaRistorante NyRt. 2023 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; RózsaRistorante™</p>
+</footer>
+</center>
 </body>
 </html>
