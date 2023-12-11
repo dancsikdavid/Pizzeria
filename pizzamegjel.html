@@ -7,64 +7,70 @@
   <title>Rendelés Admin</title>
 </head>
 <body>
-<center>
-  <h1>LEADOTT RENDELÉS</h1>
+  <center>
+    <img src="logo.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; max-width: 1000px; max-height: 200px;">
 
-  <div id="orderContent">
-    <!-- Adatok -->
-  </div>
+    <h1>LEADOTT RENDELÉSEK</h1>
 
-  <script>
-    // JSON
-    fetch('order.json')    
-      .then(response => response.json())
-      .then(data => {
-        // JSON kiíratása
-        const orderContentDiv = document.getElementById('orderContent');
-        orderContentDiv.innerHTML = `  <div class="blur">
-          <p><strong>Név:</strong></p> <p>${data.Név}</p>
-          <p>--------------------------------------------------</p>
-          <p><strong>Város:</strong></p> <p>${data.Város}</p>
-          <p>--------------------------------------------------</p>
-          <p><strong>Cím:</strong></p> <p>${data.Cím}</p>
-          <p>--------------------------------------------------</p>
-          <p><strong>Telefonszám:</strong></p> <p>${data.Telefonszám}</p>
-          <p>--------------------------------------------------</p>
-          <p><strong>Feltétek:</strong></p> <p>${data.Feltétek.join(', ')}</p>
-          <p>--------------------------------------------------</p>
-          <p><strong>Méret:</strong></p> <p>${data.Méret}</p>        
-        </div>
-        `;
+    <div id="orderContent">
+      <!-- Adatok -->
+    </div>
 
-      })
+    <script>
+      // JSON request
+      const fetchOrder = (orderNumber) => {
+        fetch(`order(${orderNumber}).json`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('No more orders');
+            }
+            return response.json();
+          })
+          .then(data => {
+            // JSON kiíratása
+            const orderContentDiv = document.getElementById('orderContent');
+            orderContentDiv.innerHTML += `
+              <div class="blur">
+                <p><strong>Név:</strong></p> <p>${data.Név}</p>
+                <p>--------------------------------------------------</p>
+                <p><strong>Város:</strong></p> <p>${data.Város}</p>
+                <p>--------------------------------------------------</p>
+                <p><strong>Cím:</strong></p> <p>${data.Cím}</p>
+                <p>--------------------------------------------------</p>
+                <p><strong>Telefonszám:</strong></p> <p>${data.Telefonszám}</p>
+                <p>--------------------------------------------------</p>
+                <p><strong>Feltétek:</strong></p> <p>${data.Feltétek.join(', ')}</p>
+                <p>--------------------------------------------------</p>
+                <p><strong>Méret:</strong></p> <p>${data.Méret}</p>
+              </div>
+            `;
 
+            // Next order
+            fetchOrder(orderNumber + 1);
+          })
+          .catch(error => {
+            if (orderNumber > 1) {
+              const orderContentDiv = document.getElementById('orderContent');
+              orderContentDiv.innerHTML += '<p>Aktív rendelések vége</p>';
+            } else {
+              const orderContentDiv = document.getElementById('orderContent');
+              orderContentDiv.innerHTML += '<p>Jelenleg nincsenek új rendelések</p>';
+            }
+          });
+      };
 
-      
-      .catch(error => {
-        console.error('Error fetching JSON:', error);
-        // Hiba line
-        const orderContentDiv = document.getElementById('orderContent');
-        orderContentDiv.innerHTML = '<p>Hiba az adatok leolvasása közben!</p>';
-      });
-  </script>
-</center>
-<div class="bg"></div>
-<div class="bg bg2"></div>
-<div class="bg bg3"></div>
-</div>
+      // Elso rendeles
+      fetchOrder(1);
+    </script>
+  </center>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<center>
-<footer>
-
-  <p>© RózsaRistorante NyRt. 2023 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; RózsaRistorante™</p>
-</footer>
-</center>
+  <center>
+    <footer>
+      <p>© RózsaRistorante NyRt. 2023 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; RózsaRistorante™</p>
+    </footer>
+  </center>
 </body>
 </html>
