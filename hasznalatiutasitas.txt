@@ -1,0 +1,7 @@
+!! Ahhoz, hogy megjelenítse az egyes rendeléseket, a rendelés JSON fájlnak order(x).json-nak kell 
+lennie, ahol az x az adott rendelés száma!!
+
+A fájlokat tartalmazó mappa megnyitása VS Code-ban
+A pizzamegjel.html kiválasztása
+A LIVE szerver elindítása (Go Live gomb, jobb alsó sarok)
+
