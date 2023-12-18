@@ -74,3 +74,15 @@ footer{
     height: 29px;
     background-color: black;
 }
+
+
+.icon {
+  position: sticky;
+  left: 1em;
+  top: 1em;
+  height: 15em;
+  width: 18em;
+}
+.blur {
+ margin-bottom: 3em; 
+}
